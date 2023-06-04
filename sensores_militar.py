@@ -14,6 +14,8 @@ import matplotlib.pyplot as plt
 import math
 import datetime
 matplotlib.use('Qt5Agg')
+import Daniela_TXT
+import  RPi.GPIO as GPIO
 
 x= np.arange(11.0 ,31.0, 0.1)
 function_temperatura =  [math.sin(xi) for xi in x]
@@ -22,6 +24,7 @@ function_vibracion =  [math.sin(xi*3.0) for xi in x]
 function_movimiento =  [math.cos(xi*2.0) for xi in x]
 
 now= datetime.datetime.now()
+
 
 
 with open("./datos_sensores_militar.txt", "w") as file:
@@ -40,7 +43,8 @@ class sensores_militar(QtWidgets.QMainWindow):
      self.Movimiento.clicked.connect(self.c)
      self.Vibraciones.clicked.connect(self.d)
      self.Tabla.clicked.connect(self.datos)
-     #self.datos()
+     self.Led.clicked.connect(self.e)
+     
    
      
  def datos(self):   
@@ -88,7 +92,35 @@ class sensores_militar(QtWidgets.QMainWindow):
     plt.ylabel('metros(m)')
     plt.xlabel('sample')
     plt.show()
-
+    
+ def e(self):
+     
+     LED_PIN = 7
+     BUTTON_PIN = 17
+     # Setup GPIO module and pins
+     GPIO.setmode(GPIO.BCM)
+     GPIO.setup(LED_PIN, GPIO.OUT)
+     GPIO.setup(BUTTON_PIN, GPIO.IN)
+     # Set LED pin to OFF (no voltage)
+     GPIO.output(LED_PIN, GPIO.LOW)
+     try:
+         # Loop forever
+         while 1:
+              # Detect voltage on button pin
+              if GPIO.input(BUTTON_PIN) == 1:
+                   # Turn on the LED
+                   GPIO.output(LED_PIN, GPIO.HIGH)
+              else:
+                    # Turn off the LED
+                    GPIO.output(LED_PIN, GPIO.LOW)
+     except KeyboardInterrupt:
+         print('hecho')
+     finally:
+         GPIO.cleanup()
+    
+   
+    
+       
 def main():
     import sys
     print('inicia')

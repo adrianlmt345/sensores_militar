@@ -115,8 +115,8 @@
    <widget class="QPushButton" name="Salir">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>90</y>
+      <x>460</x>
+      <y>200</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -138,7 +138,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>Imagenes/2.jpg</pixmap>
+     <pixmap resource="Daniela_TXT.qrc">:/Tratamiento_Imagenes/Imagenes/2.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -154,6 +154,19 @@
      </rect>
     </property>
    </widget>
+   <widget class="QPushButton" name="Led">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>120</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Led</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -164,10 +177,87 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>Archvivo</string>
+    </property>
+    <addaction name="actionAbrir"/>
+    <addaction name="actionSalir"/>
+   </widget>
+   <widget class="QMenu" name="menuopciones">
+    <property name="title">
+     <string>opciones</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionTABLA"/>
+    <addaction name="actionTemperatura"/>
+    <addaction name="actionMovimiento"/>
+    <addaction name="actionVibraciones"/>
+    <addaction name="actionSonido"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuopciones"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAbrir">
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+  <action name="actionTABLA">
+   <property name="icon">
+    <iconset resource="Daniela_TXT.qrc">
+     <normaloff>:/Tratamiento_Imagenes/Imagenes/icono_1.png</normaloff>:/Tratamiento_Imagenes/Imagenes/icono_1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tabla</string>
+   </property>
+  </action>
+  <action name="actionTemperatura">
+   <property name="icon">
+    <iconset resource="Daniela_TXT.qrc">
+     <normaloff>:/Tratamiento_Imagenes/Imagenes/icono_3.png</normaloff>:/Tratamiento_Imagenes/Imagenes/icono_3.png</iconset>
+   </property>
+   <property name="text">
+    <string>Temperatura</string>
+   </property>
+  </action>
+  <action name="actionMovimiento">
+   <property name="icon">
+    <iconset resource="Daniela_TXT.qrc">
+     <normaloff>:/Tratamiento_Imagenes/Imagenes/icono_4.png</normaloff>:/Tratamiento_Imagenes/Imagenes/icono_4.png</iconset>
+   </property>
+   <property name="text">
+    <string>Movimiento</string>
+   </property>
+  </action>
+  <action name="actionVibraciones">
+   <property name="icon">
+    <iconset resource="Daniela_TXT.qrc">
+     <normaloff>:/Tratamiento_Imagenes/Imagenes/icono_5.png</normaloff>:/Tratamiento_Imagenes/Imagenes/icono_5.png</iconset>
+   </property>
+   <property name="text">
+    <string>Vibraciones</string>
+   </property>
+  </action>
+  <action name="actionSonido">
+   <property name="icon">
+    <iconset resource="Daniela_TXT.qrc">
+     <normaloff>:/Tratamiento_Imagenes/Imagenes/icono_6.png</normaloff>:/Tratamiento_Imagenes/Imagenes/icono_6.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sonido</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="Daniela_TXT.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>Salir</sender>
