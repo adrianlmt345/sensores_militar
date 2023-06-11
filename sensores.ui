@@ -157,14 +157,40 @@
    <widget class="QPushButton" name="Led">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>120</y>
+      <x>290</x>
+      <y>70</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
      <string>Led</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Adquisicion">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>200</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Adquisicion de datos</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="nube">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>160</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Subi datos a la nube</string>
     </property>
    </widget>
   </widget>
